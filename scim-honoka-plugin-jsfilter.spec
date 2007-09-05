@@ -21,7 +21,7 @@ Requires:      libjs1 >= 1.5-0.rc5a.10
 BuildRequires: scim-honoka-devel >= %{honoka_version}
 BuildRequires: automake
 BuildRequires: libltdl-devel
-BuildRequires: libjs1-devel >= 1.5-0.rc5a.10
+BuildRequires: js-devel >= 1.5-0.rc5a.10
 
 %description
 A java script filter plugin for honoka.
