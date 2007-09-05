@@ -1,5 +1,5 @@
 %define version  0.9.2
-%define release  %mkrel 0.svn584.1
+%define release  %mkrel -c svn584 2
 %define src_name honoka-plugin-jsfilter
 
 %define honoka_version   0.9.1-2.svn585
@@ -19,7 +19,7 @@ Requires:      anthy >= %{anthy_version}
 Requires:      scim-honoka-plugin-anthy >= %{plugin_version}
 Requires:      libjs1 >= 1.5-0.rc5a.10
 BuildRequires: scim-honoka-devel >= %{honoka_version}
-BuildRequires: automake1.8
+BuildRequires: automake
 BuildRequires: libltdl-devel
 BuildRequires: libjs1-devel >= 1.5-0.rc5a.10
 
@@ -34,9 +34,8 @@ A java script filter plugin for honoka.
 # svn snapshot
 %setup -q -n jsfilter
 
-cp /usr/share/automake-1.9/mkinstalldirs .
-
 %build
+autoreconf
 [[ -f configure ]] || ./bootstrap
 
 %configure2_5x
@@ -48,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
 # remove devel files
-rm -f $RPM_BUILD_ROOT/%{_libdir}/scim-1.0/honoka/*.{a,la}
+rm -f $RPM_BUILD_ROOT/%{scim_plugins_dir}/honoka/*.{a,la}
 
 %find_lang honoka-plugin-jsfilter
 
@@ -59,10 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %postun -p /sbin/ldconfig
 
-
 %files -f honoka-plugin-jsfilter.lang
 %defattr(-,root,root)
 %doc AUTHORS COPYING ChangeLog
-%{_libdir}/scim-1.0/honoka/*.so
-
-
+%{scim_plugins_dir}/honoka/*.so
