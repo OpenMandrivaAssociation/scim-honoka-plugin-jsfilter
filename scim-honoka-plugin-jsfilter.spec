@@ -35,9 +35,7 @@ A java script filter plugin for honoka.
 %setup -q -n jsfilter
 
 %build
-autoreconf
-[[ -f configure ]] || ./bootstrap
-
+./bootstrap
 %configure2_5x
 # (tv) parallel build is broken:
 make
