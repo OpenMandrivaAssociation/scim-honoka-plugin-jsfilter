@@ -14,6 +14,7 @@ Group:      System/Internationalization
 License:    GPL
 URL:        http://sourceforge.jp/projects/scim-imengine/
 Source0:    %{src_name}-%{version}.tar.bz2
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires:      anthy >= %{anthy_version}
 Requires:      scim-honoka-plugin-anthy >= %{plugin_version}
 Requires:      libjs1 >= 1.5-0.rc5a.10
