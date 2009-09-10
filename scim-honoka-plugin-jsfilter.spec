@@ -1,5 +1,5 @@
 %define version  0.9.2
-%define release  %mkrel -c svn584 2
+%define release  %mkrel -c svn584 3
 %define src_name honoka-plugin-jsfilter
 
 %define honoka_version   0.9.1-2.svn585
