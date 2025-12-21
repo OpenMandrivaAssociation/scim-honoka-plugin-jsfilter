@@ -18,6 +18,9 @@ BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires:      anthy >= %{anthy_version}
 Requires:      scim-honoka-plugin-anthy >= %{plugin_version}
 Requires:      libjs1 >= 1.5-0.rc5a.10
+BuildRequires:	autoconf
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires: scim-honoka-devel >= %{honoka_version}
 BuildRequires: automake
 BuildRequires: libltdl-devel
